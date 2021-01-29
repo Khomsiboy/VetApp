@@ -1,0 +1,602 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CD6C320525C4AD0800131761 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6C320425C4AD0800131761 /* AppDelegate.swift */; };
+		CD6C320725C4AD0800131761 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6C320625C4AD0800131761 /* SceneDelegate.swift */; };
+		CD6C320925C4AD0800131761 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6C320825C4AD0800131761 /* ContentView.swift */; };
+		CD6C320B25C4AD0B00131761 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD6C320A25C4AD0B00131761 /* Assets.xcassets */; };
+		CD6C320E25C4AD0B00131761 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD6C320D25C4AD0B00131761 /* Preview Assets.xcassets */; };
+		CD6C321125C4AD0B00131761 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD6C320F25C4AD0B00131761 /* LaunchScreen.storyboard */; };
+		CD6C321C25C4AD0B00131761 /* VetAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6C321B25C4AD0B00131761 /* VetAppTests.swift */; };
+		CD6C322725C4AD0B00131761 /* VetAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6C322625C4AD0B00131761 /* VetAppUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CD6C321825C4AD0B00131761 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD6C31F925C4AD0800131761 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CD6C320025C4AD0800131761;
+			remoteInfo = VetApp;
+		};
+		CD6C322325C4AD0B00131761 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD6C31F925C4AD0800131761 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CD6C320025C4AD0800131761;
+			remoteInfo = VetApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CD6C320125C4AD0800131761 /* VetApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VetApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD6C320425C4AD0800131761 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CD6C320625C4AD0800131761 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		CD6C320825C4AD0800131761 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CD6C320A25C4AD0B00131761 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CD6C320D25C4AD0B00131761 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CD6C321025C4AD0B00131761 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CD6C321225C4AD0B00131761 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD6C321725C4AD0B00131761 /* VetAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VetAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD6C321B25C4AD0B00131761 /* VetAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VetAppTests.swift; sourceTree = "<group>"; };
+		CD6C321D25C4AD0B00131761 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD6C322225C4AD0B00131761 /* VetAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VetAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD6C322625C4AD0B00131761 /* VetAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VetAppUITests.swift; sourceTree = "<group>"; };
+		CD6C322825C4AD0B00131761 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CD6C31FE25C4AD0800131761 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD6C321425C4AD0B00131761 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD6C321F25C4AD0B00131761 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CD6C31F825C4AD0800131761 = {
+			isa = PBXGroup;
+			children = (
+				CD6C320325C4AD0800131761 /* VetApp */,
+				CD6C321A25C4AD0B00131761 /* VetAppTests */,
+				CD6C322525C4AD0B00131761 /* VetAppUITests */,
+				CD6C320225C4AD0800131761 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CD6C320225C4AD0800131761 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CD6C320125C4AD0800131761 /* VetApp.app */,
+				CD6C321725C4AD0B00131761 /* VetAppTests.xctest */,
+				CD6C322225C4AD0B00131761 /* VetAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CD6C320325C4AD0800131761 /* VetApp */ = {
+			isa = PBXGroup;
+			children = (
+				CD6C320425C4AD0800131761 /* AppDelegate.swift */,
+				CD6C320625C4AD0800131761 /* SceneDelegate.swift */,
+				CD6C320825C4AD0800131761 /* ContentView.swift */,
+				CD6C320A25C4AD0B00131761 /* Assets.xcassets */,
+				CD6C320F25C4AD0B00131761 /* LaunchScreen.storyboard */,
+				CD6C321225C4AD0B00131761 /* Info.plist */,
+				CD6C320C25C4AD0B00131761 /* Preview Content */,
+			);
+			path = VetApp;
+			sourceTree = "<group>";
+		};
+		CD6C320C25C4AD0B00131761 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				CD6C320D25C4AD0B00131761 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CD6C321A25C4AD0B00131761 /* VetAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				CD6C321B25C4AD0B00131761 /* VetAppTests.swift */,
+				CD6C321D25C4AD0B00131761 /* Info.plist */,
+			);
+			path = VetAppTests;
+			sourceTree = "<group>";
+		};
+		CD6C322525C4AD0B00131761 /* VetAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CD6C322625C4AD0B00131761 /* VetAppUITests.swift */,
+				CD6C322825C4AD0B00131761 /* Info.plist */,
+			);
+			path = VetAppUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CD6C320025C4AD0800131761 /* VetApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD6C322B25C4AD0B00131761 /* Build configuration list for PBXNativeTarget "VetApp" */;
+			buildPhases = (
+				CD6C31FD25C4AD0800131761 /* Sources */,
+				CD6C31FE25C4AD0800131761 /* Frameworks */,
+				CD6C31FF25C4AD0800131761 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VetApp;
+			productName = VetApp;
+			productReference = CD6C320125C4AD0800131761 /* VetApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CD6C321625C4AD0B00131761 /* VetAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD6C322E25C4AD0B00131761 /* Build configuration list for PBXNativeTarget "VetAppTests" */;
+			buildPhases = (
+				CD6C321325C4AD0B00131761 /* Sources */,
+				CD6C321425C4AD0B00131761 /* Frameworks */,
+				CD6C321525C4AD0B00131761 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CD6C321925C4AD0B00131761 /* PBXTargetDependency */,
+			);
+			name = VetAppTests;
+			productName = VetAppTests;
+			productReference = CD6C321725C4AD0B00131761 /* VetAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CD6C322125C4AD0B00131761 /* VetAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD6C323125C4AD0B00131761 /* Build configuration list for PBXNativeTarget "VetAppUITests" */;
+			buildPhases = (
+				CD6C321E25C4AD0B00131761 /* Sources */,
+				CD6C321F25C4AD0B00131761 /* Frameworks */,
+				CD6C322025C4AD0B00131761 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CD6C322425C4AD0B00131761 /* PBXTargetDependency */,
+			);
+			name = VetAppUITests;
+			productName = VetAppUITests;
+			productReference = CD6C322225C4AD0B00131761 /* VetAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CD6C31F925C4AD0800131761 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1230;
+				LastUpgradeCheck = 1230;
+				TargetAttributes = {
+					CD6C320025C4AD0800131761 = {
+						CreatedOnToolsVersion = 12.3;
+					};
+					CD6C321625C4AD0B00131761 = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = CD6C320025C4AD0800131761;
+					};
+					CD6C322125C4AD0B00131761 = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = CD6C320025C4AD0800131761;
+					};
+				};
+			};
+			buildConfigurationList = CD6C31FC25C4AD0800131761 /* Build configuration list for PBXProject "VetApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CD6C31F825C4AD0800131761;
+			productRefGroup = CD6C320225C4AD0800131761 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CD6C320025C4AD0800131761 /* VetApp */,
+				CD6C321625C4AD0B00131761 /* VetAppTests */,
+				CD6C322125C4AD0B00131761 /* VetAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CD6C31FF25C4AD0800131761 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD6C321125C4AD0B00131761 /* LaunchScreen.storyboard in Resources */,
+				CD6C320E25C4AD0B00131761 /* Preview Assets.xcassets in Resources */,
+				CD6C320B25C4AD0B00131761 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD6C321525C4AD0B00131761 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD6C322025C4AD0B00131761 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CD6C31FD25C4AD0800131761 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD6C320525C4AD0800131761 /* AppDelegate.swift in Sources */,
+				CD6C320725C4AD0800131761 /* SceneDelegate.swift in Sources */,
+				CD6C320925C4AD0800131761 /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD6C321325C4AD0B00131761 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD6C321C25C4AD0B00131761 /* VetAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD6C321E25C4AD0B00131761 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD6C322725C4AD0B00131761 /* VetAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CD6C321925C4AD0B00131761 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CD6C320025C4AD0800131761 /* VetApp */;
+			targetProxy = CD6C321825C4AD0B00131761 /* PBXContainerItemProxy */;
+		};
+		CD6C322425C4AD0B00131761 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CD6C320025C4AD0800131761 /* VetApp */;
+			targetProxy = CD6C322325C4AD0B00131761 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CD6C320F25C4AD0B00131761 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CD6C321025C4AD0B00131761 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CD6C322925C4AD0B00131761 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CD6C322A25C4AD0B00131761 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CD6C322C25C4AD0B00131761 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"VetApp/Preview Content\"";
+				DEVELOPMENT_TEAM = P92R3HVC93;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = VetApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Dom.VetApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CD6C322D25C4AD0B00131761 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"VetApp/Preview Content\"";
+				DEVELOPMENT_TEAM = P92R3HVC93;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = VetApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Dom.VetApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CD6C322F25C4AD0B00131761 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P92R3HVC93;
+				INFOPLIST_FILE = VetAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Dom.VetAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VetApp.app/VetApp";
+			};
+			name = Debug;
+		};
+		CD6C323025C4AD0B00131761 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P92R3HVC93;
+				INFOPLIST_FILE = VetAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Dom.VetAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VetApp.app/VetApp";
+			};
+			name = Release;
+		};
+		CD6C323225C4AD0B00131761 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P92R3HVC93;
+				INFOPLIST_FILE = VetAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Dom.VetAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = VetApp;
+			};
+			name = Debug;
+		};
+		CD6C323325C4AD0B00131761 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P92R3HVC93;
+				INFOPLIST_FILE = VetAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Dom.VetAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = VetApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CD6C31FC25C4AD0800131761 /* Build configuration list for PBXProject "VetApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD6C322925C4AD0B00131761 /* Debug */,
+				CD6C322A25C4AD0B00131761 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD6C322B25C4AD0B00131761 /* Build configuration list for PBXNativeTarget "VetApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD6C322C25C4AD0B00131761 /* Debug */,
+				CD6C322D25C4AD0B00131761 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD6C322E25C4AD0B00131761 /* Build configuration list for PBXNativeTarget "VetAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD6C322F25C4AD0B00131761 /* Debug */,
+				CD6C323025C4AD0B00131761 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD6C323125C4AD0B00131761 /* Build configuration list for PBXNativeTarget "VetAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD6C323225C4AD0B00131761 /* Debug */,
+				CD6C323325C4AD0B00131761 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CD6C31F925C4AD0800131761 /* Project object */;
+}
