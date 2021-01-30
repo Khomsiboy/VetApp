@@ -7,11 +7,13 @@
 
 import SwiftUI
 
-extension Color {
+
+
+/*extension Color {
     
-    static let specialWhite =  Color(red: 224/255, green: 229/255, blue: 236/255)
+  static let specialWhite =  Color(red: 224/255, green: 229/255, blue: 236/255)
     
-}
+}*/
 
 /*extension LinearGradient{
     init(_ colors: Color...){
@@ -20,13 +22,13 @@ extension Color {
 }*/
 
 
-struct MyButton: ButtonStyle {
+/*struct MyButton: ButtonStyle {
 
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .padding(.horizontal,120)
-            .padding(.vertical,40)
-            .contentShape(Circle())
+            .padding(.horizontal,100)
+            .padding(.vertical,30)
+            .contentShape(Rectangle())
             .background(
                 Group{
                     
@@ -56,13 +58,40 @@ struct MyButton: ButtonStyle {
            
     }
 
-}
-
+}*/
 
 struct ContentView: View {
+    
+
     var body: some View {
-        
         ZStack{
+            Color(red: 224/255, green: 229/255, blue: 236/255)
+                .ignoresSafeArea()
+            TabView{
+               
+                Home()
+                    .tabItem {
+                        Image(systemName: "house.fill")
+                        Text("Home")
+                    }
+                Chat()
+                    .tabItem {
+                        Image(systemName: "ellipsis.bubble")
+                        Text("Chat")
+                    }
+                Acccount()
+                    .tabItem {
+                        Image("082-dog-paw")
+                            .foregroundColor(Color.blue)
+                        Text("Account")
+                           
+                    }
+                
+            }
+        }
+        
+        
+      /*  ZStack{
             Color(red: 224/255, green: 229/255, blue: 236/255)
                 .ignoresSafeArea()
            // VStack{
@@ -83,15 +112,25 @@ struct ContentView: View {
                                 cardView()
                             }
                         }
- 
+                        
+                        
                     }
+            TabView{
+               
+                Home()
+                Acccount()
+                Chat()
+                
+            }
+            
            // }
             
         }
         
+        
        
     
-        /* ZStack{
+         ZStack{
             
             Color(red: 224/255, green: 229/255, blue: 236/255)
                 .ignoresSafeArea()
@@ -123,7 +162,7 @@ struct ContentView: View {
 }
 
 
-struct cardView : View {
+/*struct cardView : View {
     var body: some View{
         
         ZStack{
@@ -154,7 +193,7 @@ struct cardView : View {
     }
         
        
-}
+}*/
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

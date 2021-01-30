@@ -1,0 +1,6 @@
+framework module Pods_VetApp_VetAppUITests {
+  umbrella header "Pods-VetApp-VetAppUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
