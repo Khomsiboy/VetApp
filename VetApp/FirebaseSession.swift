@@ -41,7 +41,9 @@ class Session : ObservableObject{
     }
     
     func signUp(email : String , password : String){
-        authRef.createUser(withEmail: email, password: password)
+        authRef.createUser(withEmail: email, password: password) { authResult, error in
+            print(authResult)
+        }
     }
     
     func signOut() -> Bool{

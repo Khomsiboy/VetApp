@@ -9,8 +9,19 @@ import Foundation
 import SwiftUI
 
 struct Acccount: View {
+    
+    @ObservedObject var session = Session()
     var body : some View {
-        Text("Hello")
+        VStack{
+            Text("Account")
+            Button(action: {
+                session.signOut()
+            }, label: {
+                Text("Sign Out")
+            })
+        }
+      
+    
     }
     
     

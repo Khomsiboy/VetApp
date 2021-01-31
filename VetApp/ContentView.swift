@@ -62,34 +62,21 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @ObservedObject var session = Session()
 
+    
+    init() {
+        session.listen()
+    }
+    
+
+    
     var body: some View {
-        ZStack{
-            Color(red: 224/255, green: 229/255, blue: 236/255)
-                .ignoresSafeArea()
-            TabView{
-               
-                Home()
-                    .tabItem {
-                        Image(systemName: "house.fill")
-                        Text("Home")
-                    }
-                Chat()
-                    .tabItem {
-                        Image(systemName: "ellipsis.bubble")
-                        Text("Chat")
-                    }
-                Acccount()
-                    .tabItem {
-                        Image("082-dog-paw")
-                            .foregroundColor(Color.blue)
-                        Text("Account")
-                           
-                    }
-                
-            }
-        }
         
+        FirstScreen()
+         .fullScreenCover(isPresented: $session.isAnon, content: {
+             LogInView()
+         })
         
       /*  ZStack{
             Color(red: 224/255, green: 229/255, blue: 236/255)

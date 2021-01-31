@@ -25,6 +25,7 @@
 		CD6C322725C4AD0B00131761 /* VetAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6C322625C4AD0B00131761 /* VetAppUITests.swift */; };
 		CDA1B27E25C61F70004777E4 /* FirebaseSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA1B27D25C61F70004777E4 /* FirebaseSession.swift */; };
 		CDA1B28425C625A5004777E4 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA1B28325C625A5004777E4 /* LogInView.swift */; };
+		CDE3924025C64CDA00DC9F60 /* FirstScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE3923F25C64CDA00DC9F60 /* FirstScreen.swift */; };
 		EECFD4E0C95B6FB094B9B3F8 /* Pods_VetApp_VetAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CD2C923D620590F54CD1F83 /* Pods_VetApp_VetAppUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +76,7 @@
 		CD6C322825C4AD0B00131761 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CDA1B27D25C61F70004777E4 /* FirebaseSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSession.swift; sourceTree = "<group>"; };
 		CDA1B28325C625A5004777E4 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
+		CDE3923F25C64CDA00DC9F60 /* FirstScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreen.swift; sourceTree = "<group>"; };
 		DCAF5CE3DCC5B004029A507B /* Pods-VetAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VetAppTests.release.xcconfig"; path = "Target Support Files/Pods-VetAppTests/Pods-VetAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		F517456A7A903B1B598FD784 /* Pods-VetApp-VetAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VetApp-VetAppUITests.release.xcconfig"; path = "Target Support Files/Pods-VetApp-VetAppUITests/Pods-VetApp-VetAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -191,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				CDA1B28325C625A5004777E4 /* LogInView.swift */,
+				CDE3923F25C64CDA00DC9F60 /* FirstScreen.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -457,6 +460,7 @@
 				CD5E754125C5C3400009437F /* Home.swift in Sources */,
 				CDA1B28425C625A5004777E4 /* LogInView.swift in Sources */,
 				CD6C320925C4AD0800131761 /* ContentView.swift in Sources */,
+				CDE3924025C64CDA00DC9F60 /* FirstScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,8 +9,12 @@ import Foundation
 import SwiftUI
 
 struct Chat: View {
+
+    
     var body : some View {
-        Text("Hello")
+        Text("Chat")
+       
+        
     }
     
     
