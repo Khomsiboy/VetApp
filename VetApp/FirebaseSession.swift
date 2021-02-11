@@ -37,12 +37,14 @@ class Session : ObservableObject{
     }
     
     func signIn(email : String , password : String){
-        authRef.signIn(withEmail: email, password: password)
+        authRef.signIn(withEmail: email, password: password){ authResult, error in
+            print("Login state : \(authResult)")
+        }
     }
     
     func signUp(email : String , password : String){
         authRef.createUser(withEmail: email, password: password) { authResult, error in
-            print(authResult)
+            print("Sign Up state : \(authResult)")
         }
     }
     

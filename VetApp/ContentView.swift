@@ -74,7 +74,7 @@ struct ContentView: View {
     var body: some View {
         
         FirstScreen()
-         .fullScreenCover(isPresented: $session.isAnon, content: {
+        .fullScreenCover(isPresented: $session.isAnon, content: {
              LogInView()
          })
         

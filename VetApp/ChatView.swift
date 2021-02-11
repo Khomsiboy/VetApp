@@ -10,10 +10,35 @@ import SwiftUI
 
 struct Chat: View {
 
+    @ObservedObject var ChatModel = ChatRoomViewModel()
+    @State var JoinModel = false
+    
+    init() {
+        ChatModel.fetchData()
+    }
     
     var body : some View {
-        Text("Chat")
-       
+        
+        NavigationView{
+            List(ChatModel.chatRooms){ chatroom in
+            NavigationLink(destination: MessagesScreenView(chatroom: chatroom)){
+                   
+                    HStack{
+                        Text(chatroom.title)
+                    }
+                    
+                    
+              }
+        }.navigationBarTitle("Meddelanden")
+         .navigationBarItems(trailing: Button(action: {
+            self.JoinModel = true
+        }, label: {
+           Image(systemName: "plus.bubble")
+            
+        })).sheet(isPresented: $JoinModel, content: {
+            Join(isOpen: $JoinModel)
+        })
+        }
         
     }
     

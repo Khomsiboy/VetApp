@@ -14,7 +14,6 @@
 		CD5E754125C5C3400009437F /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5E754025C5C3400009437F /* Home.swift */; };
 		CD5E754625C5C75D0009437F /* 082-dog-paw@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD5E754525C5C75C0009437F /* 082-dog-paw@2x.png */; };
 		CD5E754E25C5CDF70009437F /* frog.png in Resources */ = {isa = PBXBuildFile; fileRef = CD5E754D25C5CDF60009437F /* frog.png */; };
-		CD5E755325C5E92A0009437F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CD5E755225C5E92A0009437F /* GoogleService-Info.plist */; };
 		CD6C320525C4AD0800131761 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6C320425C4AD0800131761 /* AppDelegate.swift */; };
 		CD6C320725C4AD0800131761 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6C320625C4AD0800131761 /* SceneDelegate.swift */; };
 		CD6C320925C4AD0800131761 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6C320825C4AD0800131761 /* ContentView.swift */; };
@@ -23,8 +22,13 @@
 		CD6C321125C4AD0B00131761 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD6C320F25C4AD0B00131761 /* LaunchScreen.storyboard */; };
 		CD6C321C25C4AD0B00131761 /* VetAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6C321B25C4AD0B00131761 /* VetAppTests.swift */; };
 		CD6C322725C4AD0B00131761 /* VetAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6C322625C4AD0B00131761 /* VetAppUITests.swift */; };
+		CD759FBF25C7348400F3BDA0 /* chatRoomView_Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD759FBE25C7348400F3BDA0 /* chatRoomView_Model.swift */; };
+		CD759FC725C7491F00F3BDA0 /* Join.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD759FC625C7491F00F3BDA0 /* Join.swift */; };
 		CDA1B27E25C61F70004777E4 /* FirebaseSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA1B27D25C61F70004777E4 /* FirebaseSession.swift */; };
 		CDA1B28425C625A5004777E4 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA1B28325C625A5004777E4 /* LogInView.swift */; };
+		CDBFDECF25C77945003CC1E3 /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBFDECE25C77945003CC1E3 /* MessageViewModel.swift */; };
+		CDBFDED425C77E2B003CC1E3 /* MessagesScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBFDED325C77E2B003CC1E3 /* MessagesScreenView.swift */; };
+		CDDBE4B725D48A190063217A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CDDBE4B625D48A190063217A /* GoogleService-Info.plist */; };
 		CDE3924025C64CDA00DC9F60 /* FirstScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE3923F25C64CDA00DC9F60 /* FirstScreen.swift */; };
 		EECFD4E0C95B6FB094B9B3F8 /* Pods_VetApp_VetAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CD2C923D620590F54CD1F83 /* Pods_VetApp_VetAppUITests.framework */; };
 /* End PBXBuildFile section */
@@ -59,7 +63,6 @@
 		CD5E754025C5C3400009437F /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		CD5E754525C5C75C0009437F /* 082-dog-paw@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "082-dog-paw@2x.png"; path = "../../../../Downloads/082-dog-paw@2x.png"; sourceTree = "<group>"; };
 		CD5E754D25C5CDF60009437F /* frog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = frog.png; path = ../../../../Downloads/frog.png; sourceTree = "<group>"; };
-		CD5E755225C5E92A0009437F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CD6C320125C4AD0800131761 /* VetApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VetApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD6C320425C4AD0800131761 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD6C320625C4AD0800131761 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,8 +77,13 @@
 		CD6C322225C4AD0B00131761 /* VetAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VetAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD6C322625C4AD0B00131761 /* VetAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VetAppUITests.swift; sourceTree = "<group>"; };
 		CD6C322825C4AD0B00131761 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD759FBE25C7348400F3BDA0 /* chatRoomView_Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chatRoomView_Model.swift; sourceTree = "<group>"; };
+		CD759FC625C7491F00F3BDA0 /* Join.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Join.swift; sourceTree = "<group>"; };
 		CDA1B27D25C61F70004777E4 /* FirebaseSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSession.swift; sourceTree = "<group>"; };
 		CDA1B28325C625A5004777E4 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
+		CDBFDECE25C77945003CC1E3 /* MessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
+		CDBFDED325C77E2B003CC1E3 /* MessagesScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesScreenView.swift; sourceTree = "<group>"; };
+		CDDBE4B625D48A190063217A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Firebase-info-file/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CDE3923F25C64CDA00DC9F60 /* FirstScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreen.swift; sourceTree = "<group>"; };
 		DCAF5CE3DCC5B004029A507B /* Pods-VetAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VetAppTests.release.xcconfig"; path = "Target Support Files/Pods-VetAppTests/Pods-VetAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		F517456A7A903B1B598FD784 /* Pods-VetApp-VetAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VetApp-VetAppUITests.release.xcconfig"; path = "Target Support Files/Pods-VetApp-VetAppUITests/Pods-VetApp-VetAppUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -144,8 +152,9 @@
 		CD6C320325C4AD0800131761 /* VetApp */ = {
 			isa = PBXGroup;
 			children = (
+				CDDBE4B625D48A190063217A /* GoogleService-Info.plist */,
+				CD759FBD25C7346D00F3BDA0 /* Model */,
 				CDA1B28225C6258F004777E4 /* Login */,
-				CD5E755225C5E92A0009437F /* GoogleService-Info.plist */,
 				CD6C320425C4AD0800131761 /* AppDelegate.swift */,
 				CD6C320625C4AD0800131761 /* SceneDelegate.swift */,
 				CD6C320825C4AD0800131761 /* ContentView.swift */,
@@ -159,6 +168,8 @@
 				CD6C320C25C4AD0B00131761 /* Preview Content */,
 				CD5E754025C5C3400009437F /* Home.swift */,
 				CDA1B27D25C61F70004777E4 /* FirebaseSession.swift */,
+				CD759FC625C7491F00F3BDA0 /* Join.swift */,
+				CDBFDED325C77E2B003CC1E3 /* MessagesScreenView.swift */,
 			);
 			path = VetApp;
 			sourceTree = "<group>";
@@ -187,6 +198,15 @@
 				CD6C322825C4AD0B00131761 /* Info.plist */,
 			);
 			path = VetAppUITests;
+			sourceTree = "<group>";
+		};
+		CD759FBD25C7346D00F3BDA0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CD759FBE25C7348400F3BDA0 /* chatRoomView_Model.swift */,
+				CDBFDECE25C77945003CC1E3 /* MessageViewModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		CDA1B28225C6258F004777E4 /* Login */ = {
@@ -324,7 +344,7 @@
 				CD5E754625C5C75D0009437F /* 082-dog-paw@2x.png in Resources */,
 				CD6C320E25C4AD0B00131761 /* Preview Assets.xcassets in Resources */,
 				CD6C320B25C4AD0B00131761 /* Assets.xcassets in Resources */,
-				CD5E755325C5E92A0009437F /* GoogleService-Info.plist in Resources */,
+				CDDBE4B725D48A190063217A /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,13 +473,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD5E753625C5BE2D0009437F /* AcccountView.swift in Sources */,
+				CD759FC725C7491F00F3BDA0 /* Join.swift in Sources */,
+				CDBFDED425C77E2B003CC1E3 /* MessagesScreenView.swift in Sources */,
 				CD5E752E25C5BE1E0009437F /* ChatView.swift in Sources */,
 				CD6C320525C4AD0800131761 /* AppDelegate.swift in Sources */,
 				CD6C320725C4AD0800131761 /* SceneDelegate.swift in Sources */,
 				CDA1B27E25C61F70004777E4 /* FirebaseSession.swift in Sources */,
+				CD759FBF25C7348400F3BDA0 /* chatRoomView_Model.swift in Sources */,
 				CD5E754125C5C3400009437F /* Home.swift in Sources */,
 				CDA1B28425C625A5004777E4 /* LogInView.swift in Sources */,
 				CD6C320925C4AD0800131761 /* ContentView.swift in Sources */,
+				CDBFDECF25C77945003CC1E3 /* MessageViewModel.swift in Sources */,
 				CDE3924025C64CDA00DC9F60 /* FirstScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
