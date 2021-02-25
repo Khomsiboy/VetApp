@@ -9,6 +9,11 @@ import SwiftUI
 
 struct FirstScreen: View {
     
+    @ObservedObject var ChatModel = ChatRoomViewModel()
+    init() {
+        ChatModel.fetchData()
+    }
+    
     var body: some View {
         
         ZStack{

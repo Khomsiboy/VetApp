@@ -10,7 +10,7 @@ import Firebase
 
 struct Message : Codable , Identifiable {
     var id : String?
-    var conent : String
+    var content : String
     var name : String
 }
 
@@ -47,7 +47,7 @@ class MessageViewModel : ObservableObject{
                     let docId = docSnapshot.documentID
                     let content = data["content"] as? String ?? ""
                     let displayName = data["displayName"] as? String ?? ""
-                    return Message(id: docId, conent: content, name: displayName)
+                    return Message(id: docId, content: content, name: displayName)
                     
                 }
                 
