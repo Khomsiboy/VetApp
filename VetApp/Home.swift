@@ -190,9 +190,9 @@ struct cardView : View {
                     .position(x: 50, y: 80)
                     
                 }
-                .sheet(isPresented: $Open, content: {
+                .sheet(isPresented: $Open) {
                     NewCases(isOpen: $Open)
-                })
+                }
                 .frame(width: 250, height: 150)
                 .font(.system(size: 20, weight: .semibold, design: .rounded))
                 .background(
@@ -222,7 +222,7 @@ struct cardView : View {
                 .foregroundColor(Color.gray)
                 .position(x: 140, y: 60)
                 .frame(width: 200, height: 100, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-            
+               
             
             /*.frame(width: 340, height: 150, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             .cornerRadius(20)

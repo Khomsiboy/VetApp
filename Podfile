@@ -8,6 +8,7 @@ target 'VetApp' do
   # Pods for VetApp
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
+  pod 'Firebase/Storage'
 
   target 'VetAppTests' do
     inherit! :search_paths

@@ -20,7 +20,9 @@ class MessageViewModel : ObservableObject{
     private let db = Firestore.firestore()
     private let user = Auth.auth().currentUser
     
-    func sendMessage(messageContent : String , docId : String){
+    private var image : UIImage?
+    
+    func sendMessage(messageContent : String, docId : String){
         
         if user != nil {
             db.collection("chatrooms").document(docId).collection("messages").addDocument(data: [
@@ -31,6 +33,18 @@ class MessageViewModel : ObservableObject{
             ])
         }
         
+    }
+    
+    func sendPhoto(uiImage : UIImage, docId : String){
+        if user != nil {
+            db.collection("chatrooms").document(docId).collection("messages").addDocument(data: [
+                "sentAt" : Date(),
+                "displayName" : user!.email,
+                "content" : uiImage,
+                "sender" : user!.uid
+            
+            ])
+        }
     }
     
     func getMessages(docId:String){

@@ -15,6 +15,10 @@ struct MessagesScreenView: View {
     @State var messagesValue = ""
     
     @State private var showSheet: Bool = false
+    @State private var showImagePicker : Bool = false
+    @State private var sourceType: UIImagePickerController.SourceType = .camera
+    
+    @State private var image: UIImage?
     
     init(chatroom : ChatRoom) {
         self.chatroom = chatroom
@@ -54,10 +58,12 @@ struct MessagesScreenView: View {
                                   message : Text("Choose"), buttons: [
                                     
                                     .default(Text("Photo Library")){
-                                        
+                                        self.showImagePicker = true
+                                        self.sourceType = .photoLibrary
                                     },
                                     .default(Text("Camera")){
-                                        
+                                        self.showImagePicker = true
+                                        self.sourceType = .camera
                                     },
                                     .cancel()
                                     
@@ -66,11 +72,15 @@ struct MessagesScreenView: View {
                          )
                     }
                     
-                }.padding(.horizontal,15)
+                }
+                .padding(.horizontal,15)
                 .background(Color("ChatColor"))
                 .clipShape(Capsule())
                 .padding(.leading,20)
                 .padding(.bottom,15)
+                .sheet(isPresented: $showImagePicker) {
+                    ImagePicker(image: self.$image, isShown: self.$showImagePicker, sourceType: self.sourceType)
+                }
                 Spacer()
                
                 Button(action: {

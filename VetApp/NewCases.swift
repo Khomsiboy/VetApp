@@ -19,36 +19,79 @@ struct NewCases: View {
         
         ZStack{
            
-            VStack{
-                Text("Skapa ärende")
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .padding(.top,40)
+            ScrollView(/*@START_MENU_TOKEN@*/.vertical/*@END_MENU_TOKEN@*/, showsIndicators: false, content: {
                 
-                HStack {
-                    MultiTextField(text: $text).padding().background(Color.white).cornerRadius(30)
-                        .frame(width: 350, height: 150, alignment: .center)
-                        .shadow(radius: 8)
+                VStack{
+                    Text("Skapa ärende")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .padding(.top,40)
                     
-                }.padding()
-               
-                Photos().padding(.top,60)
-                Doctor().padding(.top,30)
-                Button(action: {
-                    chatroomModel.createChatRoom(title: newTilte, handler: {
-                        self.isOpen = false
-                    })
-                }, label: {
-                    Text("Boka")
-                }).frame(width: 250, height: 60, alignment: .center)
-                .foregroundColor(.white)
-                .background(Color.blue)
-                .clipShape(Capsule())
-                .padding(.top,50)
-                
-            }
+                    HStack {
+                        MultiTextField(text: $text).padding().background(Color.white).cornerRadius(30)
+                            .frame(width: 350, height: 150, alignment: .center)
+                            .shadow(radius: 8)
+                        
+                    }.padding()
+                   
+                    Photos()
+                    Doctor().padding(.top,20)
+                    Button(action: {
+                        chatroomModel.createChatRoom(title: newTilte, handler: {
+                            self.isOpen = false
+                        })
+                    }, label: {
+                        Text("Boka")
+                    }).frame(width: 250, height: 60, alignment: .center)
+                    .foregroundColor(.white)
+                    .background(Color.blue)
+                    .clipShape(Capsule())
+                    .padding(.top,50)
+                    
+                }
+            })
+            
+       
         }
     }
+}
+
+struct SButton : View {
+   
+    
+    var buttonText = ""
+    var buttonImg = ""
+    var buttonColor = Color(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
+    
+    var body: some View{
+        
+        
+        RoundedRectangle(cornerRadius: 25.0, style: .continuous)
+            .frame(width: 350, height: 100, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            .foregroundColor(buttonColor)
+            .shadow(radius: 8)
+        HStack{
+            Image(buttonImg)
+                .resizable()
+                .frame(width: 40, height: 40)
+                .clipShape(Circle())
+                Spacer()
+            VStack(alignment: .leading, spacing: 5, content: {
+                Text(buttonText)
+                    .font(.system(size: 18))
+                    .font(.title)
+                    .fontWeight(.bold)
+                Text("Nästa ledigt tid 8:00")
+                    .font(.system(size: 15))
+                    .foregroundColor(.black)
+                
+            }).padding(.trailing,100)
+        }.padding(.horizontal,50)
+    }
+   
+    
+    
+    
 }
 
 struct Doctor : View {
@@ -57,32 +100,21 @@ struct Doctor : View {
     let doctor = ["doctor_profile_image","doctor-img-01-free-img"]
     let doctorName = ["Amanda Nilsson","Lars Sten"]
     
+    @State private var tap : Bool = false
+    
     var body: some View{
         VStack(spacing: 15){
             ForEach(0..<2){ i in
-                ZStack {
-                    RoundedRectangle(cornerRadius: 25.0, style: .continuous)
-                        .frame(width: 350, height: 100, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        .foregroundColor(.white)
-                        .shadow(radius: 8)
-                    HStack{
-                        Image("\(doctor[i])")
-                            .resizable()
-                            .frame(width: 40, height: 40)
-                            .clipShape(Circle())
-                            Spacer()
-                        VStack(alignment: .leading, spacing: 5, content: {
-                            Text("\(doctorName[i])")
-                                .font(.system(size: 18))
-                                .font(.title)
-                                .fontWeight(.bold)
-                            Text("Nästa ledigt tid 8:00")
-                                .font(.system(size: 15))
-                            
-                        }).padding(.trailing,100)
-                    }.padding(.horizontal,50)
-                    
-                }
+                
+                Button(action: {
+                    self.tap = true
+                }, label: {
+                    ZStack {
+                        SButton(buttonText: "\(doctorName[i])", buttonImg: "\(doctor[i])", buttonColor: Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
+                    }
+                })
+                
+              
             }
         }
     }
@@ -92,23 +124,33 @@ struct Photos: View {
     @State var images : [UIImage] = []
     @State var picker = false
     
+    @State private var showSheet: Bool = false
+    @State private var showImagePicker : Bool = false
+    @State private var sourceType: UIImagePickerController.SourceType = .camera
+    
+    @State private var image: UIImage?
     
     var body: some View{
+        
+        
         VStack{
-            if !images.isEmpty{
-                ScrollView(.horizontal, showsIndicators: false, content: {
-                    HStack(spacing: 15){
-                        ForEach(images,id: \.self){ img in
-                            Image(uiImage: img)
-                                .resizable()
-                            frame(width: UIScreen.main.bounds.width - 45, height: 100)
-                                .cornerRadius(20)
-                        }
-                    }
-                })
-            }else{
+//                ScrollView(.horizontal, showsIndicators: false, content: {
+//                    HStack(spacing: 15){
+//                        ForEach(images,id: \.self){ img in
+//                            Image(uiImage: img)
+//                                .resizable()
+//                            frame(width: UIScreen.main.bounds.width - 45, height: 100)
+//                                .cornerRadius(20)
+//                        }
+//                    }
+//                })
+            
+              Image(uiImage: image ?? UIImage(named: "frog")!)
+                  .resizable()
+                  .frame(width: 100, height: 100)
+               
                 Button(action: {
-                    picker.toggle()
+                    self.showSheet = true
                 }, label: {
                     Text("Select images")
                 })
@@ -117,81 +159,99 @@ struct Photos: View {
                 .padding(.horizontal,35)
                 .background(Color.green)
                 .clipShape(Capsule())
-            }
-        }.sheet(isPresented: $picker, content: {
-            ImagePicker(images: $images, picker: $picker)
-        })
-        
-        
-    }
-}
-
-
-struct ImagePicker : UIViewControllerRepresentable {
-
-    
-    @Binding var images : [UIImage]
-    @Binding var picker : Bool
-    
-    
-    func makeCoordinator() -> Coordinator {
-        return ImagePicker.Coordinator(parent1: self)
-    }
-    
-    
-    func makeUIViewController(context: Context) -> PHPickerViewController {
-         
-        var config = PHPickerConfiguration()
-        config.filter = .images
-        config.selectionLimit = 0
-        
-        let picker = PHPickerViewController(configuration: config)
-        
-        picker.delegate = context.coordinator
-        return picker
-    }
-    
-    func updateUIViewController(_ uiViewController: PHPickerViewController, context: Context) {
-        
-    }
-    
-    class Coordinator : NSObject,PHPickerViewControllerDelegate{
-        
-        var parent : ImagePicker
-        
-        init(parent1 : ImagePicker) {
-            parent = parent1
-        }
-        
-        func picker(_ picker: PHPickerViewController, didFinishPicking result: [PHPickerResult]){
-            
-            parent.picker.toggle()
-            
-            for img in result{
-                if img.itemProvider.canLoadObject(ofClass: UIImage.self) {
-                    
-                    img.itemProvider.loadObject(ofClass: UIImage.self){ (Image, err) in
-                        
-                        guard let image1 = Image else{
-                            print(err)
-                            return
-                        }
-                        
-                        self.parent.images.append(image1 as! UIImage)
-                        
-                    }
-                    
-                    
-                }else{
-                    //Connot load
-                    print("Cant Load Images")
+                .actionSheet(isPresented: $showSheet) {
+                    ActionSheet(title: Text("Select Photo"),
+                              message : Text("Choose"), buttons: [
+                                
+                                .default(Text("Photo Library")){
+                                    self.showImagePicker = true
+                                    self.sourceType = .photoLibrary
+                                },
+                                .default(Text("Camera")){
+                                    self.showImagePicker = true
+                                    self.sourceType = .camera
+                                },
+                                .cancel()
+                                
+                                
+                             ]
+                     )
                 }
-            }
+            
+        }.sheet(isPresented: $showImagePicker) {
+            ImagePicker(image: self.$image, isShown: self.$showImagePicker, sourceType: self.sourceType)
         }
         
+        
     }
-    
 }
+
+
+//struct ImagePicker : UIViewControllerRepresentable {
+//
+//
+//    @Binding var images : [UIImage]
+//    @Binding var picker : Bool
+//
+//
+//    func makeCoordinator() -> Coordinator {
+//        return ImagePicker.Coordinator(parent1: self)
+//    }
+//
+//
+//    func makeUIViewController(context: Context) -> PHPickerViewController {
+//
+//        var config = PHPickerConfiguration()
+//        config.filter = .images
+//        config.selectionLimit = 0
+//
+//        let picker = PHPickerViewController(configuration: config)
+//
+//        picker.delegate = context.coordinator
+//        return picker
+//    }
+//
+//    func updateUIViewController(_ uiViewController: PHPickerViewController, context: Context) {
+//
+//    }
+//
+//    class Coordinator : NSObject,PHPickerViewControllerDelegate{
+//
+//        var parent : ImagePicker
+//
+//        init(parent1 : ImagePicker) {
+//            parent = parent1
+//        }
+//
+//        func picker(_ picker: PHPickerViewController, didFinishPicking result: [PHPickerResult]){
+//
+//            parent.picker.toggle()
+//
+//            for img in result{
+//                if img.itemProvider.canLoadObject(ofClass: UIImage.self) {
+//
+//                    img.itemProvider.loadObject(ofClass: UIImage.self){ (Image, err) in
+//
+//                        guard let image1 = Image else{
+//                            print(err)
+//                            return
+//                        }
+//
+//                        self.parent.images.append(image1 as! UIImage)
+//
+//                    }
+//
+//
+//                }else{
+//                    //Connot load
+//                    print("Cant Load Images")
+//                }
+//            }
+//        }
+//
+//    }
+//
+//}
 
 struct NewCases_Previews: PreviewProvider {
     static var previews: some View {
