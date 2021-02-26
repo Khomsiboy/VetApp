@@ -180,6 +180,7 @@ struct Photos: View {
             
         }.sheet(isPresented: $showImagePicker) {
             ImagePicker(image: self.$image, isShown: self.$showImagePicker, sourceType: self.sourceType)
+                .ignoresSafeArea()
         }
         
         

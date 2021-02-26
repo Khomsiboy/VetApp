@@ -81,6 +81,8 @@ struct MainView: View {
     
     let iconImage = ["user-2","settings","layer","insurance","group","placeholder"]
     
+    @AppStorage("DarkMode") private var Mode = false
+    
     @ObservedObject var session = Session()
     
     @State var isOn: Bool = false
