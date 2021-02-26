@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import MapKit
 
 struct Acccount: View {
     
@@ -87,6 +88,7 @@ struct MainView: View {
     @State var security: Bool = false
     @State var map: Bool = false
     
+    
     var body: some View{
         
         VStack{
@@ -122,6 +124,7 @@ struct MainView: View {
                                         else if i == 5{
                                             Button(action: {
                                                 self.map = true
+                                              
                                             }, label: {
                                                 Text("Map")
                                                     .fontWeight(.bold)
@@ -131,9 +134,12 @@ struct MainView: View {
                                                     .font(.title)
                                                     .foregroundColor(.black)
                                                 
-                                            }).sheet(isPresented: $map, content: {
+                                            })
+                                            .sheet(isPresented: $map, content: {
+                                                VetMap()
                                                 
                                             })
+                                            
                                         }
                                         
                                     }.padding()
@@ -176,7 +182,7 @@ struct MainView: View {
                                         
                                     })
                                     .sheet(isPresented: $map, content: {
-                                        
+                                       VetMap()
                                     })
                                     
                                 }
@@ -253,7 +259,7 @@ struct MainView: View {
                         
                     }
                 }.padding(.top,5)
-                .padding(.bottom,100)
+                .padding(.bottom,130)
                 
                 
             }
