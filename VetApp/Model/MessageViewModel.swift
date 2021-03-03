@@ -7,6 +7,7 @@
 
 import Foundation
 import Firebase
+import FirebaseStorage
 
 struct Message : Codable , Identifiable {
     var id : String?
@@ -23,7 +24,7 @@ class MessageViewModel : ObservableObject{
     private var image : UIImage?
     
     func sendMessage(messageContent : String, docId : String){
-        
+         
         if user != nil {
             db.collection("chatrooms").document(docId).collection("messages").addDocument(data: [
                 "sentAt" : Date(),
@@ -36,15 +37,48 @@ class MessageViewModel : ObservableObject{
     }
     
     func sendPhoto(uiImage : UIImage, docId : String){
-        if user != nil {
-            db.collection("chatrooms").document(docId).collection("messages").addDocument(data: [
-                "sentAt" : Date(),
-                "displayName" : user!.email,
-                "content" : uiImage,
-                "sender" : user!.uid
-            
-            ])
-        }
+        
+        
+        let imageName = UUID().uuidString
+       
+                   let storage = Storage.storage().reference().child(imageName)
+       
+                   storage.putData((uiImage.jpegData(compressionQuality: 0.35))!, metadata: nil){
+                       (_,err) in
+       
+                       if err != nil{
+                           print((err?.localizedDescription)!)
+                           return
+                       }
+       
+                       print("Success")
+       
+                       storage.downloadURL { (url, err) in
+                           if err != nil{
+                               print((err?.localizedDescription)!)
+                               return
+                           }
+       
+                           guard let url = url else{
+                               print((err?.localizedDescription)!)
+                               return
+                           }
+                        
+                        if self.user != nil {
+                            self.db.collection("chatrooms").document(docId).collection("messages").addDocument(data: [
+                                "sentAt" : Date(),
+                                "displayName" : self.user!.email,
+                                "content" : url.absoluteString,
+                                "sender" : self.user!.uid
+                            
+                            ])
+                        }
+                        
+                        
+                       }
+                   }
+        
+       
     }
     
     func getMessages(docId:String){

@@ -62,7 +62,6 @@ struct Home: View {
     let textArray = ["Feber & trötthet","Hud & päls","Sår & skador","Luftvägar","Mage & tarm","Mun & Tänder","Övrig" ]
     let imageArray = [ "frog","dog","elizabethan-collar","kidneys","diarrhea","dog-2","vaccine"]
     
-    
     var body : some View {
     
         

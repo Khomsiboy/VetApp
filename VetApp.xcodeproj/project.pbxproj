@@ -10,6 +10,7 @@
 		AA0544E4A6262D32BE602B6A /* Pods_VetApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D3DCADCDB182D59419B4E18 /* Pods_VetApp.framework */; };
 		C093A90923FE291D656B98E7 /* Pods_VetAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1618DF86AAEBAD376661ECDD /* Pods_VetAppTests.framework */; };
 		CD077D5C25E8ACE100F09855 /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD077D5B25E8ACE100F09855 /* MapModel.swift */; };
+		CD45CCE925EDA17A00CD8DE1 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD45CCE825EDA17A00CD8DE1 /* UserModel.swift */; };
 		CD5E752E25C5BE1E0009437F /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5E752D25C5BE1E0009437F /* ChatView.swift */; };
 		CD5E753625C5BE2D0009437F /* AcccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5E753525C5BE2D0009437F /* AcccountView.swift */; };
 		CD5E754125C5C3400009437F /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5E754025C5C3400009437F /* Home.swift */; };
@@ -66,6 +67,7 @@
 		9CD2C923D620590F54CD1F83 /* Pods_VetApp_VetAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VetApp_VetAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A315F4A6DABEE198C354E916 /* Pods-VetApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VetApp.release.xcconfig"; path = "Target Support Files/Pods-VetApp/Pods-VetApp.release.xcconfig"; sourceTree = "<group>"; };
 		CD077D5B25E8ACE100F09855 /* MapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
+		CD45CCE825EDA17A00CD8DE1 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		CD5E752D25C5BE1E0009437F /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		CD5E753525C5BE2D0009437F /* AcccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcccountView.swift; sourceTree = "<group>"; };
 		CD5E754025C5C3400009437F /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				CD759FC625C7491F00F3BDA0 /* Join.swift */,
 				CDBFDED325C77E2B003CC1E3 /* MessagesScreenView.swift */,
 				CDA0797A25E8BFF500136FAD /* VetMap.swift */,
+				CD45CCE825EDA17A00CD8DE1 /* UserModel.swift */,
 			);
 			path = VetApp;
 			sourceTree = "<group>";
@@ -502,6 +505,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD5E753625C5BE2D0009437F /* AcccountView.swift in Sources */,
+				CD45CCE925EDA17A00CD8DE1 /* UserModel.swift in Sources */,
 				CDA0796C25E8B10800136FAD /* LocationManager.swift in Sources */,
 				CD759FC725C7491F00F3BDA0 /* Join.swift in Sources */,
 				CDA0797125E8B8ED00136FAD /* LandMark.swift in Sources */,

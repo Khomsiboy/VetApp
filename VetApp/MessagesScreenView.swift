@@ -9,8 +9,8 @@ import SwiftUI
 import FirebaseAuth
 
 struct MessagesScreenView: View {
-    let chatroom : ChatRoom
     
+    let chatroom : ChatRoom
     @ObservedObject var messages = MessageViewModel()
     @State var messagesValue = ""
     
@@ -79,8 +79,9 @@ struct MessagesScreenView: View {
                 .padding(.leading,20)
                 .padding(.bottom,15)
                 .sheet(isPresented: $showImagePicker) {
-                    ImagePicker(image: self.$image, isShown: self.$showImagePicker, sourceType: self.sourceType)
-                }
+                         ImagePicker(image: self.$image, isShown: self.$showImagePicker, sourceType: self.sourceType)
+                        .ignoresSafeArea()
+                
                 Spacer()
                
                 Button(action: {
@@ -122,18 +123,18 @@ struct MessagesScreenView_Previews: PreviewProvider {
 struct Chatcell: View {
     
     @ObservedObject var messages = MessageViewModel()
-    private let user = Auth.auth().currentUser
+     private let user = Auth.auth().currentUser
      var userText: String
      var UserEmail: String
     
     var body: some View{
         
-       
+       // om image is not nil 
         
         HStack{
             if UserEmail == user!.email {
                 Spacer()
-                Text(userText)
+                Text(userText) // check if it text or image, if image show image or text
                     .padding()
                     .background(Color("Color1"))
                     .clipShape(MessageShape(user: true))
@@ -217,3 +218,4 @@ struct MessageShape : Shape {
 //
 //    }
 //}
+}

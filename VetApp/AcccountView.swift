@@ -12,13 +12,13 @@ import MapKit
 struct Acccount: View {
     
     @ObservedObject var ChatModel = ChatRoomViewModel()
+    @ObservedObject var session = Session()
     
     init() {
         ChatModel.fetchData()
     }
     
     
-    @ObservedObject var session = Session()
     var body : some View {
         
         ZStack{
@@ -79,19 +79,24 @@ struct TopView: View {
 
 struct MainView: View {
     
+   
     let iconImage = ["user-2","settings","layer","insurance","group","placeholder"]
     
     @AppStorage("DarkMode") private var Mode = false
     
     @ObservedObject var session = Session()
     
+    init() {
+        session.getUserData()
+    }
+    
+    
     @State var isOn: Bool = false
     @State var setting: Bool = false
     @State var security: Bool = false
     @State var map: Bool = false
-    
-    
-    var body: some View{
+
+    var body: some View {
         
         VStack{
             ZStack {
@@ -109,7 +114,7 @@ struct MainView: View {
                                 if (i == 0){
                                     
                                     
-                                    RoundedRectangle(cornerRadius: 30, style: .continuous)
+                                   RoundedRectangle(cornerRadius: 30, style: .continuous)
                                         .frame(width: 350, height: 150, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                                         .foregroundColor(.white)
                                         .shadow(radius: 5)
@@ -121,7 +126,11 @@ struct MainView: View {
                                             .frame(width: 40, height: 40)
                                         Spacer()
                                         if i == 0 {
-                                            TextUserInfo()
+                                        
+                                            if let userData = session.userData{
+                                                
+                                                TextUserInfo(data: userData)
+                                            }
                                         }
                                         else if i == 5{
                                             Button(action: {
@@ -287,14 +296,21 @@ struct Blur : UIViewRepresentable {
 
 struct TextUserInfo : View {
     
+    //@ObservedObject private var session = Session()
+    var data : UserData
+    
     var body: some View{
-        VStack(spacing:10){
-            HStack{
-                Text("Dom khomsan Bangbor")
-                    .padding(.trailing,60)
-                
-            }
-            Text("domkhomsan789@hotmail.com")
-        }
+        
+        HStack{
+            VStack(spacing:10){
+               
+                Text("\(data.userName)")
+                    .padding(.trailing,105)
+                Text("\(data.userEmail)")
+                }
+            Spacer()
+        }.padding()
+        
     }
+
 }

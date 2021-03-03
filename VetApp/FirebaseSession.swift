@@ -9,35 +9,47 @@ import Foundation
 import FirebaseAuth
 import Firebase
 
-struct User {
-    var uid : String
+struct User : Identifiable{
+    var id : String = UUID().uuidString
     var email : String
+    var name : String
 }
 
-struct UserData {
-    
+struct UserData : Identifiable {
+    var id : String = UUID().uuidString
     var userName : String
     var userEmail : String
 }
 
 class Session : ObservableObject{
     
-    @Published var sessionUser :User?
+    @Published var sessionUser : User?
+    @Published var sessionUserData : UserModel?
     @Published var isAnon: Bool = false
-    @Published var data = [UserData]()
+    @Published var isLogin: Bool = false
+    @Published var userData : UserData? = nil
     private let db = Firestore.firestore()
     
     var handle: AuthStateDidChangeListenerHandle?
     let authRef = Auth.auth()
     
+    
+    
     func listen(){
         handle = authRef.addStateDidChangeListener({(auth,user) in
             if let user = user {
                 self.isAnon = false
-                self.sessionUser = User(uid: user.uid, email: user.email!)
+//                self.sessionUser = User(id: user.uid, email: user.email!, name: user.displayName!)
+//                self.sessionUserData = UserModel(uid: user.uid, displayname: user.displayName, email: user.email!)
+                if let userName = user.displayName{
+                    self.userData = UserData(userName: userName, userEmail: user.email!)
+                }
+                
             }else{
                 self.isAnon = true
                 self.sessionUser = nil
+                self.sessionUserData = nil
+                self.userData = nil
             }
             
         })
@@ -45,16 +57,32 @@ class Session : ObservableObject{
         
     }
     
-    func signIn(email : String , password : String){
+    func signIn( email : String , password : String){
         authRef.signIn(withEmail: email, password: password){ authResult, error in
             print("Login state : \(authResult)")
+            if let err = error{
+                print("Login error: \(err)")
+               
+            }else{
+                self.isLogin = true
+                self.getUserData()
+            }
         }
+        
     }
     
-    func signUp(email : String , password : String){
+    func signUp(name: String , email : String , password : String){
         authRef.createUser(withEmail: email, password: password) { authResult, error in
             print("Sign Up state : \(authResult)")
+            if let err = error{
+                print(" create user \(err)")
+            }else{
+                self.isLogin = true
+                self.createUser(userName: name, email: email)
+            }
+           
         }
+       
     }
     
     func signOut() -> Bool{
@@ -62,6 +90,7 @@ class Session : ObservableObject{
             try authRef.signOut()
             self.sessionUser = nil
             self.isAnon = true
+            self.isLogin = false
             return true
         } catch{
             return false
@@ -76,32 +105,59 @@ class Session : ObservableObject{
     
     
     func createUser(userName: String, email: String){
-        db.collection("User").document().setData(["UserName" : userName, "Email": email])
+       // db.collection("User").document().setData(["UserName" : userName, "Email": email])
+        db.collection("User").document(authRef.currentUser!.uid).setData(["UserName" : userName, "Email": email])
+        
     }
     
-    func getUserData(userEmail : String){
-        db.collection("User").whereField("Email", isEqualTo: userEmail)
-            .getDocuments(){ (QuerySnapshot, err) in
-                
-                if let err = err{
-                    print("error getting docs \(err)")
-                }else{
-                    
-                    var d = [UserData]()
-                    
-                    for document in QuerySnapshot!.documents{
-                        let data = document.data()
-                        let name = data["UserName"] as? String ?? ""
-                        let email = data["Email"] as? String ?? ""
-                        
-                        d.append(UserData(userName: name, userEmail: email))
+    func getUserData(){
+        
+        if let currentUser = authRef.currentUser?.uid{
+            db.collection("User").document(currentUser)
+               .getDocument(){ (querySnapshot, err) in
+                   
+                   if let err = err{
+                       print("error getting docs \(err)")
+                   }else{
+                       
+                       
+                      // for document in QuerySnapshot!.document{
+                           let data = querySnapshot!.data()
+                           let name = data?["UserName"] as? String ?? ""
+                           let email = data?["Email"] as? String ?? ""
+                           
+                       
+                       self.userData = UserData(userName: name, userEmail: email)
+                       print(self.userData?.userName)
+                       print(self.userData?.userEmail)
 
-                    }
-                    for doc in d {
-                        print(doc.userEmail)
-                    }
+                      
+                   }
+           }
+        
+        }
+        
+//        db.collection("User").whereField("Email", isEqualTo: authRef.currentUser).addSnapshotListener{(QuerySnapshot,error) in
+//
+//            guard let documents = QuerySnapshot?.documents else {
+//                print("Not found")
+//                return
+//            }
+//
+//            self.sessionUser = documents.map { (documentQuery) -> User in
+//                let data = documentQuery.data()
+//                let name = data["UserName"] as? String ?? ""
+//                let email = data["Email"] as? String ?? ""
+//
+//                return User(email: email, name: name)
+//
+//
+//            }
+//        }
+                
+               ///---------------------
                     
-                }
+               // }
 //                guard let documents = QuerySnapshot?.documents else {
 //                    print("No Document found")
 //                    return
@@ -123,4 +179,4 @@ class Session : ObservableObject{
 }
 
 
-}
+

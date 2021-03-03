@@ -243,11 +243,6 @@ struct Login:View {
         
         Button(action: {
             session.signIn(email: email, password: password)
-            session.getUserData(userEmail: email)
-            for doc in data{
-                print(doc.userName)
-            }
-          
         }, label: {
             Text("Login")
                 .foregroundColor(.white)
@@ -347,9 +342,7 @@ struct SignUp: View {
         
         
         Button(action: {
-            session.signUp(email: email, password: password)
-            session.createUser(userName: userName, email: email)
-            
+            session.signUp(name: userName,email: email, password: password)
         }, label: {
             Text("Sign Up")
                 .foregroundColor(.white)
