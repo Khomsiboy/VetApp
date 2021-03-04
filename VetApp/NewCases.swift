@@ -8,11 +8,14 @@
 import SwiftUI
 import UIKit
 import PhotosUI
+import FirebaseStorage
+import Firebase
+import FirebaseFirestore
 
 struct NewCases: View {
     
     @State var text : String = ""
-    @State var newTilte = "Elias Kyviat"
+    @State var newTilte = ""
     @Binding var isOpen : Bool
     @ObservedObject var chatroomModel = ChatRoomViewModel()
     var body: some View {
@@ -121,6 +124,7 @@ struct Doctor : View {
 }
 
 struct Photos: View {
+    
     @State var images : [UIImage] = []
     @State var picker = false
     

@@ -39,10 +39,10 @@ class MessageViewModel : ObservableObject{
     func sendPhoto(uiImage : UIImage, docId : String){
         
         
-        let imageName = UUID().uuidString
+                  let imageName = UUID().uuidString
        
                    let storage = Storage.storage().reference().child(imageName)
-       
+                   print("Image name: \(imageName)")
                    storage.putData((uiImage.jpegData(compressionQuality: 0.35))!, metadata: nil){
                        (_,err) in
        

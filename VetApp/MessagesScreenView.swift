@@ -44,7 +44,7 @@ struct MessagesScreenView: View {
                     
                     TextField("Enter Message...", text : $messagesValue)
                         .frame(width: 200, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        
+
                     Button(action: {
                         self.showSheet = true
                     }, label: {
@@ -78,17 +78,20 @@ struct MessagesScreenView: View {
                 .clipShape(Capsule())
                 .padding(.leading,20)
                 .padding(.bottom,15)
-                .sheet(isPresented: $showImagePicker) {
-                         ImagePicker(image: self.$image, isShown: self.$showImagePicker, sourceType: self.sourceType)
-                        .ignoresSafeArea()
+               
                 
                 Spacer()
-               
                 Button(action: {
                     
                     if messagesValue != ""{
                         messages.sendMessage(messageContent: messagesValue, docId: chatroom.id)
                         messagesValue = ""
+                        print("Messages Send")
+                    }
+                    if self.image != nil{
+                        messages.sendPhoto(uiImage: image!, docId: chatroom.id)
+                        print("Photo Send")
+                        self.image = nil
                     }
                     
                 }, label: {
@@ -102,6 +105,9 @@ struct MessagesScreenView: View {
                            
                 }).padding(.trailing,20)
                 .padding(.bottom,15)
+                .sheet(isPresented: $showImagePicker) {
+                        ImagePicker(image: self.$image, isShown: self.$showImagePicker, sourceType: self.sourceType)
+                        .ignoresSafeArea()
                     
                 
                
@@ -122,7 +128,7 @@ struct MessagesScreenView_Previews: PreviewProvider {
 
 struct Chatcell: View {
     
-    @ObservedObject var messages = MessageViewModel()
+     @ObservedObject var messages = MessageViewModel()
      private let user = Auth.auth().currentUser
      var userText: String
      var UserEmail: String

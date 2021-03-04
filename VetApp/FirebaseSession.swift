@@ -113,8 +113,7 @@ class Session : ObservableObject{
     func getUserData(){
         
         if let currentUser = authRef.currentUser?.uid{
-            db.collection("User").document(currentUser)
-               .getDocument(){ (querySnapshot, err) in
+            db.collection("User").document(currentUser).getDocument(){ (querySnapshot, err) in
                    
                    if let err = err{
                        print("error getting docs \(err)")

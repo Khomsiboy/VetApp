@@ -14,14 +14,22 @@ import Firebase
 import FirebaseFirestore
 
 
+struct ChatRoomId : Identifiable {
+    
+    var id : String
+    var code : Int
+    var image : UIImage
+}
+
+
 class ImagePickerCoordinator : NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate{
     
     @Binding var image : UIImage?
     @Binding var isShown : Bool
 
-    @ObservedObject var chatroomModel = ChatRoomViewModel()
     private let user = Auth.auth().currentUser
     private let db = Firestore.firestore()
+    @Published var chatRooms = [ChatRoomId]()
     
     
     init(image : Binding<UIImage?>, isShown : Binding<Bool>) {
@@ -37,19 +45,19 @@ class ImagePickerCoordinator : NSObject, UINavigationControllerDelegate, UIImage
             
             let imageName = UUID().uuidString
 
-            let storage = Storage.storage().reference().child(imageName)
-
-            storage.putData((image?.jpegData(compressionQuality: 0.35))!, metadata: nil){
-                (_,err) in
-
-                if err != nil{
-                    print((err?.localizedDescription)!)
-                    return
-                }
+              let storage = Storage.storage().reference().child(imageName)
+//            print(" Image Name : \(imageName)")
+//            storage.putData((image?.jpegData(compressionQuality: 0.35))!, metadata: nil){
+//                (_,err) in
+//
+//                if err != nil{
+//                    print((err?.localizedDescription)!)
+//                    return
+//                }
 
                 print("Success")
 
-                storage.downloadURL { [self] (url, err) in
+                   storage.downloadURL { [self] (url, err) in
                     if err != nil{
                         print((err?.localizedDescription)!)
                         return
@@ -60,14 +68,41 @@ class ImagePickerCoordinator : NSObject, UINavigationControllerDelegate, UIImage
                         return
                     }
 
+                    var id : String = ""
+                    
                     if self.user != nil{
-                        let dataRef =  
-                            db.collection("chatrooms").document("").collection("messages").addDocument(data: [
-                            "sentAt" : Date(),
-                            "displayName" : self.user!.email,
-                            "content" : url.absoluteString,
-                            "sender" : self.user!.uid
-                        ])
+                        
+                        
+                        db.collection("chatrooms").whereField("user",arrayContains: self.user!.uid).addSnapshotListener({(snapshot,error) in
+                            guard let documents = snapshot?.documents else {
+                                print("no document")
+                                return
+                            }
+                            
+                            
+                            self.chatRooms = documents.map({ docSnapshot -> ChatRoomId in
+                                
+                                let data = docSnapshot.data()
+                                let docId = docSnapshot.documentID
+                                let joinCode = data["joinCode"] as? Int ?? -1
+                            
+                                   print("Document: \(docId)" + " Code \(joinCode)")
+                                
+                                
+//                                let dataRef =
+//                                    db.collection("chatrooms").whereField("joinCode", isEqualTo: ).collection("messages").addDocument(data: [
+//                                    "sentAt" : Date(),
+//                                    "displayName" : self.user!.email,
+//                                    "content" : url.absoluteString,
+//                                    "sender" : self.user!.uid
+//                                ])
+                                
+                                return ChatRoomId(id: docId, code: joinCode,image: image!)
+                                
+                            })
+                        })
+                        
+                        
                     }
 
                 }
@@ -83,7 +118,7 @@ class ImagePickerCoordinator : NSObject, UINavigationControllerDelegate, UIImage
     
 }
 
-}
+
 
 struct ImagePicker : UIViewControllerRepresentable {
    
