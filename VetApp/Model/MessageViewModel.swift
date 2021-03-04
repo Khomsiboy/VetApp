@@ -13,6 +13,7 @@ struct Message : Codable , Identifiable {
     var id : String?
     var content : String
     var name : String
+    var imageBool : Bool
 }
 
 class MessageViewModel : ObservableObject{
@@ -39,7 +40,7 @@ class MessageViewModel : ObservableObject{
     func sendPhoto(uiImage : UIImage, docId : String){
         
         
-                  let imageName = UUID().uuidString
+                  let imageName = UUID().uuidString + ".jpg"
        
                    let storage = Storage.storage().reference().child(imageName)
                    print("Image name: \(imageName)")
@@ -69,6 +70,7 @@ class MessageViewModel : ObservableObject{
                                 "sentAt" : Date(),
                                 "displayName" : self.user!.email,
                                 "content" : url.absoluteString,
+                                "ImageBool" : true,
                                 "sender" : self.user!.uid
                             
                             ])
@@ -95,7 +97,8 @@ class MessageViewModel : ObservableObject{
                     let docId = docSnapshot.documentID
                     let content = data["content"] as? String ?? ""
                     let displayName = data["displayName"] as? String ?? ""
-                    return Message(id: docId, content: content, name: displayName)
+                    let imageBool = data["ImageBool"]
+                    return Message(id: docId, content: content, name: displayName,imageBool: (imageBool != nil))
                     
                 }
                 

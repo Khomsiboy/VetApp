@@ -147,9 +147,11 @@ struct MainView: View {
                                                 
                                             })
                                             .sheet(isPresented: $map, content: {
-                                                VetMap()
+                                                
+                                                    
                                                 
                                             })
+
                                             
                                         }
                                         
@@ -192,8 +194,9 @@ struct MainView: View {
                                         }
                                         
                                     })
-                                    .sheet(isPresented: $map, content: {
+                                    .fullScreenCover(isPresented: $map, content: {
                                        VetMap()
+                                        .ignoresSafeArea(.all)
                                     })
                                     
                                 }

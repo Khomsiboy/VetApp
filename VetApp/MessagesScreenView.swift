@@ -7,6 +7,8 @@
 
 import SwiftUI
 import FirebaseAuth
+import FirebaseStorage
+import SDWebImageSwiftUI
 
 struct MessagesScreenView: View {
     
@@ -31,7 +33,8 @@ struct MessagesScreenView: View {
                 VStack{
                     ForEach(messages.messages){ message in
                         
-                        Chatcell(userText: message.content, UserEmail: message.name)
+                        Chatcell(userText: message.content, UserEmail: message.name, imageBool: message.imageBool)
+                        //Chatcell(userText: message.content, UserEmail: message.name)
                         
                     }
                     
@@ -108,15 +111,24 @@ struct MessagesScreenView: View {
                 .sheet(isPresented: $showImagePicker) {
                         ImagePicker(image: self.$image, isShown: self.$showImagePicker, sourceType: self.sourceType)
                         .ignoresSafeArea()
-                    
-                
-               
+
             }
            
             
         }
         .navigationBarTitle(chatroom.title)
     }
+  }
+    
+    
+    
+    func loadImage(){
+        let storage = Storage.storage().reference(withPath: "6F98A099-5DF9-4EBC-8517-9B8659AAFDE8.jpg?")
+        storage.downloadURL{ (url,error) in
+            
+        }
+    }
+    
 }
 
 struct MessagesScreenView_Previews: PreviewProvider {
@@ -132,6 +144,9 @@ struct Chatcell: View {
      private let user = Auth.auth().currentUser
      var userText: String
      var UserEmail: String
+     var imageBool : Bool
+     @State var showImage : Bool = false
+     
     
     var body: some View{
         
@@ -139,33 +154,66 @@ struct Chatcell: View {
         
         HStack{
             if UserEmail == user!.email {
-                Spacer()
-                Text(userText) // check if it text or image, if image show image or text
-                    .padding()
-                    .background(Color("Color1"))
-                    .clipShape(MessageShape(user: true))
-                    .foregroundColor(.white)
                 
-               
-                        
+                Spacer()
+                
+                if imageBool {
+                    
+                    Button(action: {
+                        showImage = true
+                    }, label: {
+                        WebImage(url: URL(string: userText))
+                            .resizable()
+                            .clipShape(MessageShape(user: true))
+                            .aspectRatio(contentMode: .fit)
+                    })
+
+                }
+                if !imageBool && userText != ""{
+                    Text(userText) // check if it text or image, if image show image or text
+                        .padding()
+                        .background(Color("Color1"))
+                        .clipShape(MessageShape(user: true))
+                        .foregroundColor(.white)
+                }
+                      
             }else{
-                Text(userText)
-                    .padding()
-                    .background(Color("ChatColor"))
-                    .clipShape(MessageShape(user: false))
-                    .foregroundColor(.white)
                 
-                Spacer()
+                if imageBool {
+                    
+                    Button(action: {
+                        showImage = true
+                    }, label: {
+                        WebImage(url: URL(string: userText))
+                            .resizable()
+                            .clipShape(MessageShape(user: false))
+                            .aspectRatio(contentMode: .fit)
+                    })
+
+                }else{
+                    Text(userText) // check if it text or image, if image show image or text
+                        .padding()
+                        .background(Color("ChatColor"))
+                        .clipShape(MessageShape(user: false))
+                        .foregroundColor(.white)
+                }
+                
+                   Spacer()
             }
            
             
             
         }.padding(UserEmail == user!.email ? .leading : .trailing, 100)
         .padding(.vertical,2)
+        .fullScreenCover(isPresented: $showImage, content: {
+            ShowImage(imageUrl: userText, isOpen: $showImage)
+        })
         
         
         
     }
+    
+    
 }
 
 struct MessageShape : Shape {
@@ -224,4 +272,4 @@ struct MessageShape : Shape {
 //
 //    }
 //}
-}
+//}

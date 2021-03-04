@@ -59,8 +59,12 @@ struct MyButton: ButtonStyle {
 
 struct Home: View {
     
-    let textArray = ["Feber & trötthet","Hud & päls","Sår & skador","Luftvägar","Mage & tarm","Mun & Tänder","Övrig" ]
-    let imageArray = [ "frog","dog","elizabethan-collar","kidneys","diarrhea","dog-2","vaccine"]
+    @ObservedObject var session = Session()
+    
+    
+    init() {
+        session.getUserData()
+    }
     
     var body : some View {
     
@@ -98,40 +102,10 @@ struct Home: View {
         .ignoresSafeArea(.all)
         
         */
-        
-        
-        ZStack{
-            
-            Color(#colorLiteral(red: 0.8980392157, green: 0.9333333333, blue: 1, alpha: 1))
-                .ignoresSafeArea()
-            
-            VStack{
-                    VStack{
-                        ScrollView(.vertical, showsIndicators:false){
-                            ForEach(0..<7){ i in
-                                if i == 0{
-                                    Text("Hej Dom")
-                                        .font(.title)
-                                        .foregroundColor(Color.gray)
-                                        .padding(.top, 100.0)
-                                    Text("Vad kan vi hjälpa Viper med?")
-                                        .font(.callout)
-                                        .foregroundColor(Color.gray)
-                                        .padding(.bottom,50.0)
-                                    //cardView(n: textArray[i])
-                                }
-                                cardView(n: textArray[i],image: imageArray[i])
-                            }
-                        }
-                        
-                    }.frame(minWidth: 1000, maxHeight: 1000)
-                    .background(Color(#colorLiteral(red: 0.8980392157, green: 0.9333333333, blue: 1, alpha: 1)))
-
-            }
-            
+        if let userData = session.userData{
+            UserInfo(data: userData)
         }
-        
-        
+      
        
     
         /* ZStack{
@@ -165,6 +139,50 @@ struct Home: View {
     }
     
     
+}
+
+
+struct UserInfo : View {
+    
+    let textArray = ["Feber & trötthet","Hud & päls","Sår & skador","Luftvägar","Mage & tarm","Mun & Tänder","Övrig" ]
+    let imageArray = [ "frog","dog","elizabethan-collar","kidneys","diarrhea","dog-2","vaccine"]
+    
+    var data : UserData
+    var body: some View{
+        
+        ZStack{
+            
+            Color(#colorLiteral(red: 0.8980392157, green: 0.9333333333, blue: 1, alpha: 1))
+                .ignoresSafeArea()
+            
+            VStack{
+                    VStack{
+                        ScrollView(.vertical, showsIndicators:false){
+                            ForEach(0..<7){ i in
+                                if i == 0{
+                                    Text("Hej \(data.userName)")
+                                        .font(.title)
+                                        .foregroundColor(Color.gray)
+                                        .padding(.top, 100.0)
+                                    Text("Vad kan vi hjälpa "+"\(data.petName!)"+" med?")
+                                        .font(.callout)
+                                        .foregroundColor(Color.gray)
+                                        .padding(.bottom,50.0)
+                                    //cardView(n: textArray[i])
+                                }
+                                cardView(n: textArray[i],image: imageArray[i])
+                            }
+                        }
+                        
+                    }.frame(minWidth: 1000, maxHeight: 1000)
+                    .background(Color(#colorLiteral(red: 0.8980392157, green: 0.9333333333, blue: 1, alpha: 1)))
+
+            }
+            
+        }
+        
+        
+    }
 }
 
 
@@ -241,6 +259,8 @@ struct cardView : View {
 
 
 struct HomeView_Previews: PreviewProvider {
+    
+    
     static var previews: some View {
         Home()
     }

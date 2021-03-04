@@ -19,6 +19,7 @@ struct UserData : Identifiable {
     var id : String = UUID().uuidString
     var userName : String
     var userEmail : String
+    var petName : String?
 }
 
 class Session : ObservableObject{
@@ -71,14 +72,14 @@ class Session : ObservableObject{
         
     }
     
-    func signUp(name: String , email : String , password : String){
+    func signUp(name: String , email : String , password : String, petName : String){
         authRef.createUser(withEmail: email, password: password) { authResult, error in
             print("Sign Up state : \(authResult)")
             if let err = error{
                 print(" create user \(err)")
             }else{
                 self.isLogin = true
-                self.createUser(userName: name, email: email)
+                self.createUser(userName: name, email: email,petName: petName)
             }
            
         }
@@ -104,9 +105,9 @@ class Session : ObservableObject{
     }
     
     
-    func createUser(userName: String, email: String){
+    func createUser(userName: String, email: String, petName : String){
        // db.collection("User").document().setData(["UserName" : userName, "Email": email])
-        db.collection("User").document(authRef.currentUser!.uid).setData(["UserName" : userName, "Email": email])
+        db.collection("User").document(authRef.currentUser!.uid).setData(["UserName" : userName, "Email": email, "PetName" : petName])
         
     }
     
@@ -124,9 +125,10 @@ class Session : ObservableObject{
                            let data = querySnapshot!.data()
                            let name = data?["UserName"] as? String ?? ""
                            let email = data?["Email"] as? String ?? ""
+                           let pet = data?["PetName"] as? String ?? ""
                            
                        
-                       self.userData = UserData(userName: name, userEmail: email)
+                    self.userData = UserData(userName: name, userEmail: email, petName : pet)
                        print(self.userData?.userName)
                        print(self.userData?.userEmail)
 

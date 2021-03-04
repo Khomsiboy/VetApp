@@ -37,6 +37,7 @@
 		CDBFDED425C77E2B003CC1E3 /* MessagesScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBFDED325C77E2B003CC1E3 /* MessagesScreenView.swift */; };
 		CDDBE4B725D48A190063217A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CDDBE4B625D48A190063217A /* GoogleService-Info.plist */; };
 		CDE3924025C64CDA00DC9F60 /* FirstScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE3923F25C64CDA00DC9F60 /* FirstScreen.swift */; };
+		CDEE396325F18EBC00AA61F0 /* ShowImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEE396225F18EBC00AA61F0 /* ShowImage.swift */; };
 		CDF55CCB25E866E70098E269 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF55CCA25E866E70098E269 /* ImagePicker.swift */; };
 		EECFD4E0C95B6FB094B9B3F8 /* Pods_VetApp_VetAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CD2C923D620590F54CD1F83 /* Pods_VetApp_VetAppUITests.framework */; };
 /* End PBXBuildFile section */
@@ -100,6 +101,7 @@
 		CDBFDED325C77E2B003CC1E3 /* MessagesScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesScreenView.swift; sourceTree = "<group>"; };
 		CDDBE4B625D48A190063217A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Firebase-info-file/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CDE3923F25C64CDA00DC9F60 /* FirstScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreen.swift; sourceTree = "<group>"; };
+		CDEE396225F18EBC00AA61F0 /* ShowImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowImage.swift; sourceTree = "<group>"; };
 		CDF55CCA25E866E70098E269 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		DCAF5CE3DCC5B004029A507B /* Pods-VetAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VetAppTests.release.xcconfig"; path = "Target Support Files/Pods-VetAppTests/Pods-VetAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		F517456A7A903B1B598FD784 /* Pods-VetApp-VetAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VetApp-VetAppUITests.release.xcconfig"; path = "Target Support Files/Pods-VetApp-VetAppUITests/Pods-VetApp-VetAppUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				CDBFDED325C77E2B003CC1E3 /* MessagesScreenView.swift */,
 				CDA0797A25E8BFF500136FAD /* VetMap.swift */,
 				CD45CCE825EDA17A00CD8DE1 /* UserModel.swift */,
+				CDEE396225F18EBC00AA61F0 /* ShowImage.swift */,
 			);
 			path = VetApp;
 			sourceTree = "<group>";
@@ -522,6 +525,7 @@
 				CDA1B28425C625A5004777E4 /* LogInView.swift in Sources */,
 				CD077D5C25E8ACE100F09855 /* MapModel.swift in Sources */,
 				CD6C320925C4AD0800131761 /* ContentView.swift in Sources */,
+				CDEE396325F18EBC00AA61F0 /* ShowImage.swift in Sources */,
 				CDF55CCB25E866E70098E269 /* ImagePicker.swift in Sources */,
 				CDBFDECF25C77945003CC1E3 /* MessageViewModel.swift in Sources */,
 				CDE3924025C64CDA00DC9F60 /* FirstScreen.swift in Sources */,

@@ -267,6 +267,7 @@ struct Login:View {
 struct SignUp: View {
     
     @State var userName = ""
+    @State var Pet = ""
     @State var email = ""
     @State var password = ""
     @State var repassword = ""
@@ -281,6 +282,13 @@ struct SignUp: View {
                     Image(systemName: "person.crop.circle")
                         .foregroundColor(.black)
                     TextField("Name", text: self.$userName)
+                    
+                }.padding(.vertical,20)
+                HStack(spacing: 15){
+                    
+                    Image(systemName: "tortoise")
+                        .foregroundColor(.black)
+                    TextField("Pet", text: self.$Pet)
                     
                 }.padding(.vertical,20)
                 HStack(spacing: 15){
@@ -318,7 +326,7 @@ struct SignUp: View {
                         .frame(width: 15, height: 18)
                         .foregroundColor(.black)
                     
-                    SecureField("Password", text: self.$password)
+                    SecureField("Repassword", text: self.$repassword)
                     
                     
                     Button(action: {
@@ -342,7 +350,7 @@ struct SignUp: View {
         
         
         Button(action: {
-            session.signUp(name: userName,email: email, password: password)
+            session.signUp(name: userName,email: email, password: password, petName: Pet)
         }, label: {
             Text("Sign Up")
                 .foregroundColor(.white)

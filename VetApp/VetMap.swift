@@ -45,6 +45,7 @@ struct VetMap: View {
                 }
                 Spacer()
             }.padding()
+            .padding(.top,50)
             VStack{
                 Spacer()
                 HStack{
